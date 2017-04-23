@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :logged_in_user
+  before_action :require_user_logged_in
   
   def create
     @micropost = Micropost.find(params[:micropost_id])
