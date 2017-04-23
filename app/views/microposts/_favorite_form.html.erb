@@ -1,0 +1,9 @@
+<span id="favorite_form-<%= micropost.id %>">
+  <% if current_user.favorite?(micropost) %>
+    <%= render 'microposts/unfavorite', micropost: micropost %>
+  <% else %>
+    <%= render 'microposts/favorite', micropost: micropost %>
+  <% end %>
+</span>
+
+<%= link_to "favorite", micropost_favorites_path(micropost), method: :post %>
